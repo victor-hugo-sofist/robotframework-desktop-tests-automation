@@ -25,8 +25,6 @@ encerrar api sikuli
     Stop Remote Server
 
 finalizar teste
-    Sleep    1
-    Capture Screen
     Close Application    Calculadora
     encerrar api sikuli
 
@@ -52,6 +50,7 @@ validar que o ${image} é igual a ${result}
     SikuliLibrary.Click    ${image}
     Press Combination      key.ctrl    key.a
     ImageHorizonLibrary.Copy
+    Capture Screen
     ${value}=    ImageHorizonLibrary.Get Clipboard Content
     Should Be Equal    ${value}    ${result}
 
