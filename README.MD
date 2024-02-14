@@ -12,7 +12,7 @@
 Execute:
 > `pip install -r requirements.txt`
 
-### Dependências Java - Allure Report
+### Dependências Java - Sikuli Library
 
 A biblioteca Sikuli depende da instalação do JDK.
 
