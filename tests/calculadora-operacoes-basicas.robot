@@ -5,7 +5,7 @@ Resource    ${EXECDIR}//resources//base.robot
 
 Suite Setup        iniciar app calculadora
 Suite Teardown     finalizar teste
-Test Setup         limpar resultado
+Test Setup         limpar calculadora
 
 
 *** Test Cases ***

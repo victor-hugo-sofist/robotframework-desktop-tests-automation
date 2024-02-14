@@ -54,6 +54,6 @@ validar que o ${image} é igual a ${result}
     ${value}=    ImageHorizonLibrary.Get Clipboard Content
     Should Be Equal    ${value}    ${result}
 
-limpar resultado
+limpar calculadora
     SikuliLibrary.Click    clear.png
     
