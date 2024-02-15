@@ -12,6 +12,12 @@
 Execute:
 > `pip install -r requirements.txt`
 
+### Extensão Robot Framework
+
+Instale a extensão do Robot Framework no VS-CODE.
+
+Para isto, procure pela extensão `d-biehl.robotcode`
+
 ### Dependências Java - Sikuli Library
 
 A biblioteca Sikuli depende da instalação do JDK.
