@@ -8,7 +8,7 @@
 
 ## INSTALANDO AS DEPENDÊNCIAS
 
-### Dependências NPM
+### Dependências PIP
 Execute:
 > `pip install -r requirements.txt`
 
