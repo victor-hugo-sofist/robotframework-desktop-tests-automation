@@ -1,6 +1,5 @@
 *** Settings ***
-Documentation    Tudo se inicia neste arquivo
-
+Documentation    Carrega os elementos e keywords básicas para o funcionamento da calculadora
 Library    SikuliLibrary
 Library    ImageHorizonLibrary
 
@@ -8,10 +7,7 @@ Library    ImageHorizonLibrary
 
 carregar os elementos do app
     Add Image Path    ${EXECDIR}\\resources\\elements\\base
-    Add Image Path    ${EXECDIR}\\resources\\elements\\calculadora\\soma
-    Add Image Path    ${EXECDIR}\\resources\\elements\\calculadora\\subtração
-    Add Image Path    ${EXECDIR}\\resources\\elements\\calculadora\\multiplicação
-    Add Image Path    ${EXECDIR}\\resources\\elements\\calculadora\\divisão
+    Add Image Path    ${EXECDIR}\\resources\\elements\\validation
 
 iniciar app calculadora
     carregar os elementos do app
@@ -28,20 +24,8 @@ finalizar teste
     Close Application    Calculadora
     encerrar api sikuli
 
-clicar no número ${number}
-    SikuliLibrary.Click    number-${number}.png
-
-teclar operador de soma
-    Type With Modifiers    +
-
-teclar operador de subtração
-    Type With Modifiers    -
-
-teclar operador de multiplicação
-    Type With Modifiers    *
-
-teclar operador de divisão
-    Type With Modifiers    /
+teclar operador ${operador}
+    Type With Modifiers    ${operador}
 
 clicar em igual
     SikuliLibrary.Click    equal.png
@@ -56,4 +40,25 @@ validar que o ${image} é igual a ${result}
 
 limpar calculadora
     SikuliLibrary.Click    clear.png
+
+realizar a operacao ${valor_1} ${operador} ${valor_2}
+    ${value_1_len}=    Get Length    ${valor_1}      
+    FOR  ${a}  IN RANGE    ${value_1_len}
+        Run Keyword If    '${valor_1[${a}]}' in ['+', '-', '*', '/']
+        ...     Teclar Operador ${valor_1[${a}]}
+        ...     ELSE
+        ...     SikuliLibrary.Click    number-${valor_1[${a}]}.png
+    END
+
+    teclar operador ${operador}
+
+    ${value_2_len}=    Get Length    ${valor_2}      
+    FOR  ${b}  IN RANGE    ${value_2_len}
+        Run Keyword If    '${valor_2[${b}]}' in ['+', '-', '*', '/']
+        ...    Teclar Operador ${valor_2[${b}]}
+        ...    ELSE
+        ...    SikuliLibrary.Click    number-${valor_2[${b}]}.png
+    END
+
+    clicar em igual
     
