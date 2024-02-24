@@ -8,14 +8,15 @@ Library    ImageHorizonLibrary
 carregar os elementos do app
     Add Image Path    ${EXECDIR}\\resources\\elements\\base
     Add Image Path    ${EXECDIR}\\resources\\elements\\validation
+    Add Image Path    ${EXECDIR}\\resources\\elements\\operacoes-avancadas
 
 iniciar app calculadora
     carregar os elementos do app
     inserir valor calculadora em search.png
     SikuliLibrary.Click    calc-icon.PNG
 
-inserir valor ${value} em ${image} 
-    Input Text    ${image}    ${value}   
+inserir valor ${value} em ${image}
+    Input Text    ${image}    ${value}
 
 encerrar api sikuli
     Stop Remote Server
@@ -42,7 +43,7 @@ limpar calculadora
     SikuliLibrary.Click    clear.png
 
 realizar a operacao ${valor_1} ${operador} ${valor_2}
-    ${value_1_len}=    Get Length    ${valor_1}      
+    ${value_1_len}=    Get Length    ${valor_1}
     FOR  ${a}  IN RANGE    ${value_1_len}
         Run Keyword If    '${valor_1[${a}]}' in ['+', '-', '*', '/']
         ...     Teclar Operador ${valor_1[${a}]}
@@ -52,7 +53,7 @@ realizar a operacao ${valor_1} ${operador} ${valor_2}
 
     teclar operador ${operador}
 
-    ${value_2_len}=    Get Length    ${valor_2}      
+    ${value_2_len}=    Get Length    ${valor_2}
     FOR  ${b}  IN RANGE    ${value_2_len}
         Run Keyword If    '${valor_2[${b}]}' in ['+', '-', '*', '/']
         ...    Teclar Operador ${valor_2[${b}]}

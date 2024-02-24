@@ -12,7 +12,7 @@ Test Setup         limpar calculadora
 soma-01 - Somar dois números positivos
     [Tags]    calculadora    soma    soma-01
     realizar a operacao 11 + 11
-    validar que o resultado-da-soma.png é igual a 22
+    validar que o resultado-da-soma.png é igual a 23
 
 soma-02 - Somar dois números sendo um negativo
     [Tags]    calculadora    soma    soma-02
