@@ -6,6 +6,7 @@ Library    ImageHorizonLibrary
 *** Keywords ***
 
 carregar os elementos do app
+    SikuliLibrary.Start Sikuli Process
     Add Image Path    ${EXECDIR}\\resources\\elements\\base
     Add Image Path    ${EXECDIR}\\resources\\elements\\validation
     Add Image Path    ${EXECDIR}\\resources\\elements\\operacoes-avancadas

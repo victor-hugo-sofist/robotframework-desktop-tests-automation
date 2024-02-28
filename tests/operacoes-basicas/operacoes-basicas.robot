@@ -6,13 +6,14 @@ Resource    ${EXECDIR}//resources//base.robot
 Suite Setup        iniciar app calculadora
 Suite Teardown     finalizar teste
 Test Setup         limpar calculadora
+Task Teardown
 
 *** Test Cases ***
 
 soma-01 - Somar dois números positivos
     [Tags]    calculadora    soma    soma-01
     realizar a operacao 11 + 11
-    validar que o resultado-da-soma.png é igual a 23
+    validar que o resultado-da-soma.png é igual a 22
 
 soma-02 - Somar dois números sendo um negativo
     [Tags]    calculadora    soma    soma-02
